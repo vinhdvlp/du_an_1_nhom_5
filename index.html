@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: cursive;
+      }
+      .container {
+        box-shadow: 0 0 10px aquamarine;
+        width: 400px;
+        margin: 0 auto;
+        border-radius: 10px;
+        background-color: darkslategrey;
+        border: 1px solid gray;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+
+        margin-top: 50px;
+      }
+      input {
+        font-weight: bold;
+        font-size: 30px;
+        text-align: right;
+      }
+      .manhinh input {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        border: none;
+        background-color: aquamarine;
+        margin-top: 10px;
+      }
+      .manhinh {
+        margin: 0 auto;
+        width: 95%;
+      }
+      .phim {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+      .hang {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .phim1 {
+        width: 65px;
+        height: 65px;
+        border-radius: 10px;
+        background-color: rgb(105, 102, 102);
+      }
+      .phim1 p {
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 65px;
+        text-align: center;
+      }
+      #ac {
+        background-color: red;
+      }
+      #ac:hover {
+        background-color: rgb(167, 245, 245);
+      }
+      .phim1:hover {
+        background-color: white;
+      }
+      .phim1 p:hover {
+        color: black;
+      }
+      input:focus {
+        outline: none;
+      }
+      #bang {
+        background-color: blue;
+      }
+      #bang:hover {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CALCULATOR</h1>
+    <div class="container">
+      <div class="manhinh">
+        <input type="text" id="ip" />
+      </div>
+      <div class="phim">
+        <div class="hang">
+          <div class="phim1" onclick="phim7();"><p>7</p></div>
+          <div class="phim1" onclick="phim8();"><p>8</p></div>
+          <div class="phim1" onclick="phim9();"><p>9</p></div>
+          <div class="phim1" onclick="phimchia();"><p>/</p></div>
+          <div class="phim1" id="ac" onclick="phimac();"><p>AC</p></div>
+        </div>
+        <div class="hang">
+          <div class="phim1" onclick="phim4();"><p>4</p></div>
+          <div class="phim1" onclick="phim5();"><p>5</p></div>
+          <div class="phim1" onclick="phim6();"><p>6</p></div>
+          <div class="phim1" onclick="phim7();"><p>7</p></div>
+          <div class="phim1" onclick="phimpt();"><p>%</p></div>
+        </div>
+        <div class="hang">
+          <div class="phim1" onclick="phim1();"><p>1</p></div>
+          <div class="phim1" onclick="phim2()"><p>2</p></div>
+          <div class="phim1" onclick="phim3();"><p>3</p></div>
+          <div class="phim1" onclick="phimcong();"><p>+</p></div>
+          <div class="phim1" onclick="phimtru();"><p>-</p></div>
+        </div>
+        <div class="hang">
+          <div class="phim1" onclick="phim0();"><p>0</p></div>
+          <div class="phim1" onclick="phim00();"><p>00</p></div>
+          <div class="phim1" onclick="phim000();"><p>000</p></div>
+          <div class="phim1" onclick="phimnhan();"><p>*</p></div>
+          <div class="phim1" onclick="bang()" id="bang"><p>=</p></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var so1;
+      var kiTu1 = " ";
+      var phepTinh = " ";
+      function phim1() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "1";
+      }
+      function phim2() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "2";
+      }
+      function phim3() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "3";
+      }
+      function phim4() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "4";
+      }
+      function phim5() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "5";
+      }
+      function phim6() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "6";
+      }
+      function phim7() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "7";
+      }
+      function phim8() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "8";
+      }
+      function phim9() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "9";
+      }
+      function phim0() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "0";
+      }
+      function phim00() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "00";
+      }
+      function phim000() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = kiTu1.value + "000";
+      }
+      function phimac() {
+        kiTu1 = document.getElementById("ip");
+        kiTu1.value = " ";
+      }
+      function phimcong() {
+        kiTu1 = document.getElementById("ip");
+        so1 = kiTu1.value;
+        document.getElementById("ip").value = " ";
+        phepTinh = "+";
+      }
+      function phimtru() {
+        kiTu1 = document.getElementById("ip");
+        so1 = kiTu1.value;
+        document.getElementById("ip").value = " ";
+        phepTinh = "-";
+      }
+      function phimnhan() {
+        kiTu1 = document.getElementById("ip");
+        so1 = kiTu1.value;
+        document.getElementById("ip").value = " ";
+        phepTinh = "*";
+      }
+      function phimchia() {
+        kiTu1 = document.getElementById("ip");
+        so1 = kiTu1.value;
+        document.getElementById("ip").value = " ";
+        phepTinh = "/";
+      }
+      function phimpt() {
+        kiTu1 = document.getElementById("ip");
+        var pt = Number(kiTu1.value) / 100;
+        document.getElementById("ip").value = pt;
+      }
+      function bang() {
+        var so2 = document.getElementById("ip").value;
+
+        if (isNaN(so1) || isNaN(so2)) {
+          alert("sử dụng nút trên máy tính");
+        } else {
+          if (phepTinh == "+") {
+            var tong = Number(so1) + Number(so2);
+            document.getElementById("ip").value = tong;
+          }
+          if (phepTinh == "-") {
+            var hieu = Number(so1) - Number(so2);
+            document.getElementById("ip").value = hieu;
+          }
+          if (phepTinh == "*") {
+            var hieu = Number(so1) * Number(so2);
+            document.getElementById("ip").value = hieu;
+          }
+          if (phepTinh == "/") {
+            var hieu = Number(so1) / Number(so2);
+            document.getElementById("ip").value = hieu;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
